@@ -1,7 +1,9 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./PlaceOrder.css";
 import { StoreContext } from "../../context/StoreContext";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
 
 const PlaceOrder = () => {
 
@@ -28,13 +30,13 @@ const PlaceOrder = () => {
   const placeOrder = async (event) => {
     event.preventDefault();
     let orderItems = [];
-    food_list.map((item) => {
+    food_list.forEach((item) => {
       if (cartItems[item._id] > 0) {
-        let itemInfo = item;
-        itemInfo["quantity"] = cartItems[item._id]
-        orderItems.push(itemInfo)
+        let itemInfo = { ...item }; // clone object để tránh mutate state
+        itemInfo["quantity"] = cartItems[item._id];
+        orderItems.push(itemInfo);
       }
-    })
+    });
     let orderData = {
       address: data,
       items: orderItems,
@@ -49,6 +51,18 @@ const PlaceOrder = () => {
       alert("Error");
     }
   }
+
+  const navigate = useNavigate();
+
+  useEffect(()=>{
+    if (!token) {
+      navigate('/cart')
+    }
+    else if (getTotalCartAmount() === 0)
+       {
+        navigate('/cart')
+       }
+  },[token])
 
   return (
     <form onSubmit={placeOrder} className="place-order">

@@ -9,11 +9,11 @@ const Footer = () => {
         <div className="footer-content-left">
           <img src={assets.logo} alt="" />
           <p>
-            Diners can watch the action in our open kitchen as chefs flame-sear
-            pho broth or pan-roast Mekong seafood to order. A 120-label wine
-            list and herb-forward signature cocktails are hand-selected to
-            complement every dish. Each meal is crafted to be a flavorful
-            cultural journey and a lasting memory.
+            Thực khách có thể theo dõi hoạt động trong bếp mở của chúng 
+            tôi khi các đầu bếp áp chảo nước dùng phở hoặc hải sản Mekong theo yêu cầu. 
+            Danh sách rượu vang gồm 120 nhãn hiệu và các loại cocktail đặc trưng có thảo mộc 
+            được lựa chọn thủ công để bổ sung cho mỗi món ăn. Mỗi bữa ăn được chế biến để trở 
+            thành một hành trình văn hóa đầy hương vị và là một kỷ niệm lâu dài.
           </p>
           <div className="footer-social-icon">
             <img src={assets.facebook_icon} alt="" />

@@ -4,8 +4,8 @@ const Header = () => {
   return (
     <div className='header'>
       <div className="header-contents">
-        <h2>Order your favourite food here</h2>
-        <p>Nestled in the city’s vibrant center, Restaurant pairs refined Indochine décor with a welcoming, cozy ambience. Have a nice time with my Website. Each meal is crafted to be a flavorful cultural journey and a lasting memory.</p>
+        <h2> Đặt món ăn yêu thích của bạn ở đây </h2>
+        <p>Tọa lạc tại trung tâm sôi động của thành phố, Nhà hàng kết hợp phong cách trang trí Đông Dương tinh tế với bầu không khí ấm cúng, chào đón.</p>
         {/* <button>View Menu</button> */}
       </div>
     </div>

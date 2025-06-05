@@ -10,7 +10,7 @@ const Verify = () => {
   const success = searchParams.get("success")
   const orderId = searchParams.get("orderId")
   const { url } = useContext(StoreContext)
-  const navigate = useNavigate
+  const navigate = useNavigate(); // Sửa lỗi: thêm dấu ngoặc để gọi hook
 
   const verifyPayment = async () => {
     const response = await axios.post(url + "/api/order/verify", { success, orderId })
